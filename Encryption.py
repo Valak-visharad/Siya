@@ -1,0 +1,15 @@
+import time
+import ENIGMA as en
+code = int(input('Password : '))
+filename = input("Name : ")
+text=open(filename,"r")
+text.seek(0)
+t=text.read()
+print('text : \n',t)
+txt=en.encode(t,code)
+text.close()
+text = open(filename,'w')
+text.write(str(txt))
+text.close()
+print("Encrypted Succesfully")
+time.sleep(5)
